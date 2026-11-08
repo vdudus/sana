@@ -29,11 +29,22 @@ jobs:
           BASE_PATH: /${{ github.event.repository.name }}/
       - name: SPA fallback
         run: |
-          cp dist/client/index.html dist/client/404.html
-          touch dist/client/.nojekyll
+          if [ -d ".output/public" ]; then
+            OUT_DIR=".output/public"
+          elif [ -d "dist/client" ]; then
+            OUT_DIR="dist/client"
+          else
+            OUT_DIR="dist"
+          fi
+          echo "Using output directory: $OUT_DIR"
+          if [ -f "$OUT_DIR/index.html" ]; then
+            cp "$OUT_DIR/index.html" "$OUT_DIR/404.html"
+          fi
+          touch "$OUT_DIR/.nojekyll"
+          echo "OUT_DIR=$OUT_DIR" >> "$GITHUB_ENV"
       - uses: actions/upload-pages-artifact@v3
         with:
-          path: dist/client
+          path: ${{ env.OUT_DIR }}
   deploy:
     needs: build
     runs-on: ubuntu-latest
