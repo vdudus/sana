@@ -49,7 +49,7 @@ function Tax() {
 
   function exportPackage() {
     if (tax.stage !== "signed_off") return;
-    const pkg = { tenant: RESTAURANT.name, entity: RESTAURANT.entity, method: RESTAURANT.method, taxYear: l.year, rulesVersion: RULES_VERSION, disclaimer: DISCLAIMER, cpaSignOff: { name: tax.cpaName, at: tax.signedAt }, form1120S: form1120S(l), form941: form941(l), salesTax: { state: "TX", collected: l.salesTaxCollected }, suggestions: sugg };
+    const pkg = { tenant: RESTAURANT.name, entity: RESTAURANT.entity, method: RESTAURANT.method, taxYear: l.year, rulesVersion: RULES_VERSION, disclaimer: DISCLAIMER, cpaSignOff: { name: tax.cpaName, at: tax.signedAt }, form1120S: form1120S(l), form941: form941(l), salesTax: { state: "CA", collected: l.salesTaxCollected }, suggestions: sugg };
     const a = document.createElement("a");
     a.href = URL.createObjectURL(new Blob([JSON.stringify(pkg, null, 2)], { type: "application/json" }));
     a.download = `tax-package-${l.year}.json`;
@@ -188,7 +188,7 @@ function Tax() {
               <ul className="space-y-2 text-sm">
                 <li className="flex justify-between"><span>Form 8027 · tip income (large food establishment)</span><Pill tone="watch">Check: &gt;10 employees</Pill></li>
                 <li className="flex justify-between"><span>W-2 data · 9 employees</span><Pill tone="ok">Ready</Pill></li>
-                <li className="flex justify-between"><span>Texas sales tax · collected {fmtUSD(l.salesTaxCollected)}</span><Pill tone="ok">8.25%</Pill></li>
+                <li className="flex justify-between"><span>California sales tax (SF) · collected {fmtUSD(l.salesTaxCollected)}</span><Pill tone="ok">8.625%</Pill></li>
                 <li className="flex justify-between"><span>Form 4562 · §179 combi oven</span><Pill tone="ember">Applied</Pill></li>
               </ul>
             </Panel>

@@ -155,7 +155,7 @@ function AnswerBody({ a }: { a: AssistantAnswer }) {
       {(a.fn || a.notes) && (
         <div className="flex flex-wrap gap-x-4 gap-y-1 border-t pt-2">
           {a.fn && <Meta>fn {a.fn}()</Meta>}
-          {a.period && <Meta>{a.period.label} · {new Date(a.period.from).toLocaleDateString()}–{new Date(a.period.to).toLocaleDateString()} · America/Chicago</Meta>}
+          {a.period && <Meta>{a.period.label} · {new Date(a.period.from).toLocaleDateString()}–{new Date(a.period.to).toLocaleDateString()} · America/Los_Angeles</Meta>}
           {a.filters && <Meta>{a.filters.join(" · ")}</Meta>}
           {a.syncedAt && <Meta>data synced {a.syncedAt.toLocaleTimeString([], { hour: "numeric", minute: "2-digit" })}</Meta>}
           {a.notes?.map((n) => <Meta key={n}>{n}</Meta>)}

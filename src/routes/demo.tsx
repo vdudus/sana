@@ -77,7 +77,7 @@ function DemoLogin() {
         <div className="relative">
           <AssistantAvatar className="size-20" />
           <h1 className="mt-6 font-display text-5xl leading-tight">Olive & Ember<span className="text-citrus">.</span></h1>
-          <p className="mt-3 text-paper">Austin, TX · 18 tables · Toast POS</p>
+          <p className="mt-3 text-paper">San Francisco, CA · 18 tables · Toast POS</p>
           <div className="mt-10 space-y-3 text-sm text-paper">
             <p>This is a fully interactive demo with ~400 days of synthetic POS data. Every action is permission-checked and written to the audit log.</p>
             <p className="font-mono text-xs text-paper">Tenant tnt_8f2c1a · data stays in your browser</p>

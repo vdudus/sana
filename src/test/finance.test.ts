@@ -72,7 +72,7 @@ describe("monthly financial integrity", () => {
   });
   it("attaches evidence and explicit period/basis/version to computed metrics", () => {
     const report = buildFinanceReport(ready());
-    expect(report.timezone).toBe("America/Chicago"); expect(report.month).toBe("2026-10");
+    expect(report.timezone).toBe("America/Los_Angeles"); expect(report.month).toBe("2026-10");
     expect(report.version).toBe("monthly-v1.0");
     expect(report.metrics[0].sourceIds).toEqual(["qbo-2026-10-food-sales", "qbo-2026-10-beverage-sales"]);
   });
