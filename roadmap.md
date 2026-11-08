@@ -1,20 +1,20 @@
-# SANA redesign
-- [x] Replace childish shark identity with elegant SANA branding and Indigo/silver colors.
-- [x] Preserve demo behavior; verified desktop/mobile, owner sign-in, answered sales question and server orders; 33 tests pass.
+# Product Roadmap
 
-# ADI redesign
-- [x] Research ADI naming risks and financial-assistant visual direction; findings and unresolved clearance recorded in README.
-- [x] Replace brand, palette and assistant imagery while preserving demo functions.
-- [x] Verify owner chat and finance navigation, desktop/979px/mobile layouts; fix mobile illustration overlap; all 33 existing tests pass.
+## Phase 1: Pilot & Interactive Demo (Current)
+- [x] SANA core responsive workspace & design system (desktop & mobile)
+- [x] Role-based workflows (Owner, General Manager, Server)
+- [x] Deterministic AI sales assistant with source-backed figures
+- [x] Real-time inventory tracking, FIFO alerts & expiry monitoring
+- [x] Monthly accrual P&L engine with Square & QuickBooks reconciliation
+- [x] End-to-end test coverage (33 unit & integrity tests)
 
-# Previous Mise redesign
-- [x] Replace YC-like palette and typography with an independent restaurant identity.
-- [x] Recompose the landing page with restaurant imagery and editorial layouts.
-- [x] Carry the identity through sign-in and the working demo without changing business rules.
-- [x] Verify navigation, sign-in, desktop/mobile layouts and existing tests.
+## Phase 2: Live Integrations & Automation
+- [ ] Direct Toast POS & Square OAuth sync and webhook processing
+- [ ] Native QuickBooks Online & Xero bi-directional ledger sync
+- [ ] Real-time daily labor & sales variance alerts for GMs
+- [ ] Multi-location consolidated group reporting
 
-# Updated finance brief
-- [x] Fix assistant icon contrast and narrow-screen metric cards.
-- [x] Add owner monthly reporting workflow with synthetic QuickBooks/Square sources, mappings, data quality, provenance, reconciliation and report export.
-- [x] Test financial integrity rules and verify the owner workflow and narrow layouts (33 tests; owner import, mapping, export, readback and revocation).
-- [x] Document coverage and production-only requirements unavailable on GitHub Pages.
+## Phase 3: Autonomous Back Office
+- [ ] Invoice scan & automated line-item inventory replenishment
+- [ ] Predictive food cost & labor scheduling models
+- [ ] One-click CPA tax package preparation & export

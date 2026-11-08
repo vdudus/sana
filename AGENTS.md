@@ -1,15 +1,5 @@
-<!-- LOVABLE:BEGIN -->
-> [!IMPORTANT]
-> This project is connected to [Lovable](https://lovable.dev). Avoid rewriting
-> published git history — force pushing, or rebasing/amending/squashing commits
-> that are already pushed — as it rewrites history on Lovable's side and the
-> user will likely lose their project history.
->
-> Commits you push to the connected branch sync back to Lovable and show up in
-> the editor, so keep the branch in a working state.
-<!-- LOVABLE:END -->
+# SANA Architecture & Engineering Rules
 
-## Project rules
 - The app is a static, backend-free demo: default data is synthetic; optional financial CSV summaries are processed only in the browser; state lives in `src/lib/demo/store.ts` (localStorage). Why: it must deploy to GitHub Pages with no servers, credentials or external account access.
 - All permission checks go through `src/lib/demo/permissions.ts` and domain actions in `src/lib/demo/actions.ts`; UI only mirrors them. Why: mirrors the spec's "enforce on every request" design.
 - The AI assistant maps questions to the approved analytics catalog in `src/lib/demo/analytics.ts`; numbers never come from free text. Why: spec requirement that all figures come from function outputs.

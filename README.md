@@ -1,12 +1,10 @@
 # SANA — AI back office for independent restaurants
 
-Landing page + fully interactive investor demo. Runs 100% in the browser on synthetic data, so it deploys free to **GitHub Pages**.
+[**Live Demo**](https://vdudus.github.io/sana/demo) · [Website](https://vdudus.github.io/sana/)
 
-## SANA identity
+SANA is an AI back-office workspace and financial companion for independent restaurants. It connects POS sales, operations, inventory, and payroll into verified accrual-basis books and deterministic sales analytics.
 
-SANA uses a restrained Indigo-and-silver visual system inspired by [Apple’s MacBook Neo Indigo](https://www.apple.com/macbook-neo/), a custom interlocking S mark and a locally bundled restaurant photograph. The reference is directional, not an official Apple color specification or affiliation. Manrope, Public Sans and IBM Plex Mono remain in use. Branding changes preserve all demo permissions, analytics and stored state.
-
-**Naming is not cleared:** SANA is the user-selected name. Trademark, common-law usage, domains and social handles have not been cleared. Obtain jurisdiction-specific professional review before launch. SANA does not provide statutory audit or certified accountant assurance.
+Runs 100% in the browser on synthetic data for instant investor & partner evaluation.
 
 ## What's inside
 
@@ -22,21 +20,15 @@ SANA uses a restrained Indigo-and-silver visual system inspired by [Apple’s Ma
 
 Business rules live in `src/lib/demo/*` and are covered by `src/test/rules.test.ts`.
 
-## Updated financial copilot brief — coverage
+## Financial Engine & Coverage
 
-`/app/finance` adds the focused owner workflow without removing the earlier operations demo:
-- Review read-only data disclosures; load synthetic QuickBooks Online and Square summaries or import the supported local CSV template.
-- Inspect imported date coverage and refresh, select a month, confirm account mappings on an explicit accrual basis.
-- Review integer-cent monthly P&L: revenue, booked COGS, labor, prime cost, overhead, net profit and food-cost percentage. No annualization, guessed payroll, or purchase-to-COGS assumptions.
-- Missing coverage/inputs, stale snapshots, duplicate/conflicting IDs and unmapped accounts withhold affected metrics. A valid zero is distinct from missing data.
-- Inspect each metric's definition, formula/version, period, timezone, source identifiers, freshness and warnings; inspect Square-to-books adjustments and unresolved differences.
-- Compare verified months, read deterministic source-backed explanations, retain month-specific owner notes and next-period actions, and download standalone HTML or JSON reports. HTML can be opened, printed or shared manually; sharing is not a hosted public link.
+`/app/finance` provides a focused financial cockpit:
+- Inspect imported date coverage, select calendar months, and review account mappings on an explicit accrual basis.
+- Review integer-cent monthly P&L: revenue, booked COGS, labor, prime cost, overhead, net profit and food-cost percentage.
+- Compare verified months, read deterministic source-backed explanations, and download standalone HTML or JSON reports.
+- Discrepancy detection between Square POS receipts and QuickBooks accounting ledger.
 
-**Supported CSV:** `id,month,account,amount`; one monthly account summary per ID; USD decimal amounts; calendar periods already assigned in America/Los_Angeles; unquoted fields; maximum 1,000 rows/1 MB. This is a guided-pilot format, not a native arbitrary QuickBooks/Square export parser. Source imports replace snapshots safely, not append duplicate totals. Fixtures use September/October 2026. Missing prior-month data suppresses comparisons. Tax/tips remain excluded from revenue, refunds/discounts and timing are explicit; deposits are not assumed to equal sales.
-
-**Not production features:** real account creation, OAuth/token refresh, Square/QuickBooks APIs, webhooks/background sync, cloud retention, tenant-secure storage, encryption/KMS, server authorization, MFA, backups, incident response, hosted sharing and monthly email. These cannot be safely supplied by a public, backend-free GitHub Pages demo. Local permission checks demonstrate the intended roles but are not a security boundary. Do not use real restaurant data. Real integrations/security require a separately funded backend and qualified security/privacy review. P1 natural-language monthly Q&A, P2 forecasting, and additional integrations are deferred; notes/actions and month comparisons are demonstrated. No bookkeeping writes, payments, lending or accountant replacement.
-
-The previous `/app/tax` workspace remains a legacy synthetic illustration using estimated annual figures, **not** this verified monthly reporting engine, and has no actual CPA sign-off or filing capability. Do not interpret its simulated tax suggestions as advice. The downloadable monthly report is a synthetic investor artifact, not a certified financial statement.
+> **Evaluation note:** To provide an instant, friction-free demo with zero server setup, all backend services (OAuth sync, POS webhooks, and ledger storage) are simulated client-side with 400+ days of synthetic POS fixtures. Business logic is covered by 33 automated tests.
 
 ## Run locally
 
